@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+
+  min-height: 100vh;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    132deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 85%,
+    rgba(252, 176, 69, 1) 100%
+  );
+
+  .navigation {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-sizing: initial;
+    // border-left: 5px solid #4d5bf9;
+    background: #833ab4;
+    transition: width 0.4s;
+    overflow-x: hidden;
+    z-index: 50;
+
+    ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-left: 5px;
+      padding-top: 40px;
+
+      li {
+        position: relative;
+        list-style: none;
+        width: 30%;
+        padding-left: 5px;
+        border-radius: 20px;
+
+        &.active {
+          background-color: #fff;
+          width: 150px;
+          transition: 0.3s;
+
+          a {
+            color: #333;
+          }
+        }
+
+        a {
+          position: relative;
+          display: flex;
+          gap: 10px;
+          width: 100%;
+          display: flex;
+          text-decoration: none;
+          color: #fff;
+          align-items: center;
+
+          .icon {
+            position: relative;
+            display: block;
+            min-width: 20px;
+
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+
+            .title {
+              position: relative;
+              display: block;
+
+              height: 60px;
+              line-height: 60px;
+              white-space: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    .navigation {
+      width: 250px;
+
+      ul {
+        li {
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    .navigation {
+      width: 70px;
+
+      ul {
+        li {
+          padding: 10px;
+          &.active {
+            margin-left: 8px;
+            padding-left: 10px;
+            width: 50px;
+            a {
+              .title {
+                color: #fff;
+              }
+            }
+          }
+          a {
+            .title {
+              visibility: hidden;
+            }
+            .icon {
+              margin-right: 25px;
+              height: 25px;
+              width: 25px;
+            }
+          }
+        }
+      }
+
+      &.active {
+        width: 80%;
+        opacity: 80%;
+
+        ul {
+          li {
+            a {
+              .title {
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

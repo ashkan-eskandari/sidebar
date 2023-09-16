@@ -1,0 +1,33 @@
+* {
+  scroll-behavior: smooth;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  .button {
+    right: 30px;
+    color: #fff;
+    border: 1px solid;
+    border-radius: 24px;
+    height: 40px;
+    width: 80px;
+    background: local;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    &:active {
+      transform: translateY(5px);
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .footer {
+    margin-right: -90px;
+  }
+}

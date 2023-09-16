@@ -1,0 +1,42 @@
+.toggle {
+  visibility: hidden;
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+
+  background: #833ab4;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    background: #ff4d89;
+    .close {
+      display: block;
+    }
+    .open {
+      display: none;
+    }
+  }
+  .open {
+    display: block;
+  }
+
+  ion-icon {
+    position: absolute;
+    color: #fff;
+    font-size: 34px;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .toggle {
+    visibility: visible;
+    width: 80px;
+    height: 80px;
+  }
+}
